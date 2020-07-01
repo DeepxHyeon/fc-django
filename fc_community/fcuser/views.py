@@ -10,8 +10,16 @@ def home(request):
     if user_id:
         fcuser = Fcuser.objects.get(pk=user_id)
         return HttpResponse(fcuser.username)
-        
+
     return HttpResponse('Home')
+    
+
+def logout(request):
+    if request.session.get('user'):
+        del(request.session['user'])
+
+    return redirect('/')
+
 
 def login(request):
     if request.method == 'GET':
