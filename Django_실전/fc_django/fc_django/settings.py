@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'fcuser',
     'order',
     'product',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
